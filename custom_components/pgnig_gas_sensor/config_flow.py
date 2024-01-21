@@ -13,7 +13,7 @@ AUTH_SCHEMA = vol.Schema({
 })
 
 
-class PGNIGGasConfigFlow(ConfigFlow, domain="pgnig_gas_sensor"):
+class PGNIGGasConfigFlow(ConfigFlow, domain="pgnig_ha_sensor"):
     """Example config flow."""
 
     async def async_step_import(self, import_config):
