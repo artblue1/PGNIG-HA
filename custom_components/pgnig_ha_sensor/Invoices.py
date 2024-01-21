@@ -48,7 +48,7 @@ class InvoicesList:
     date: datetime
     sell_date: datetime
     gross_amount: float
-    gross_amount: int
+    gross_amount: float
     wear: int
     wear_kwh: int
     paying_deadline_date: datetime
