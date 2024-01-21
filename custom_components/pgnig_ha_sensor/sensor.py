@@ -78,7 +78,7 @@ class PgnigSensor(SensorEntity):
         self.api = api
         self.meter_id = meter_id
         self.id_local = id_local
-        self.entity_name = "PGNIG Gas Sensor " + meter_id + " " + str(id_local)
+        self.entity_name = "PGNIG HA Sensor " + meter_id + " " + str(id_local)
 
     @property
     def unique_id(self) -> str | None:
@@ -162,7 +162,7 @@ class PgnigInvoiceSensor(SensorEntity):
         attrs = dict()
         if self._state is not None:
             attrs["next_payment_date"] = self._state.get("nextPaymentDate")
-            attrs["next_payment_gross_amount"] = self._state.get("nextPaymentGrossAmount")
+            attrs["next_payment_amount_to_pay"] = self._state.get("nextPaymentGrossAmount")
             attrs["next_payment_wear"] = self._state.get("nextPaymentWear")
             attrs["next_payment_wear_KWH"] = self._state.get("nextPaymentWearKWH")
         return attrs
@@ -194,7 +194,7 @@ class PgnigInvoiceSensor(SensorEntity):
         return {"sumOfUnpaidInvoices": sum_of_unpaid_invoices,
                 "nextPaymentDate": next_payment_item.paying_deadline_date,
                 "nextPaymentWear": next_payment_item.wear, "nextPaymentWearKWH": next_payment_item.wear_kwh,
-                "nextPaymentGrossAmount": next_payment_item.gross_amount}
+                "nextPaymentAmountToPay": next_payment_item.gross_amount}
 
 
 class PgnigCostTrackingSensor(SensorEntity):
