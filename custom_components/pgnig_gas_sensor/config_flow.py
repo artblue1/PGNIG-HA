@@ -5,7 +5,7 @@ import voluptuous as vol
 from homeassistant.config_entries import ConfigFlow
 from homeassistant.const import CONF_USERNAME, CONF_PASSWORD
 
-from custom_components.pgnig_gas_sensor.PgnigApi import PgnigApi
+from custom_components.pgnig_ha_sensor.PgnigApi import PgnigApi
 
 AUTH_SCHEMA = vol.Schema({
     vol.Required(CONF_USERNAME): cv.string,
