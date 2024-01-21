@@ -1,0 +1,1 @@
+"""Pgnig HA sensor"""
