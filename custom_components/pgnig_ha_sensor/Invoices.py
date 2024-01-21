@@ -48,7 +48,7 @@ class InvoicesList:
     date: datetime
     sell_date: datetime
     gross_amount: float
-    gross_amount: float
+    amount_to_pay: float
     wear: int
     wear_kwh: int
     paying_deadline_date: datetime
@@ -82,7 +82,7 @@ class InvoicesList:
         date = from_datetime(obj.get("Date"))
         sell_date = from_datetime(obj.get("SellDate"))
         gross_amount = from_float(obj.get("GrossAmount"))
-        gross_amount = from_int(obj.get("GrossAmount"))
+        amount_to_pay = from_int(obj.get("GrossAmount"))
         wear = from_int(obj.get("Wear"))
         wear_kwh = from_int(obj.get("WearKWH"))
         paying_deadline_date = from_datetime(obj.get("PayingDeadlineDate"))
@@ -108,7 +108,7 @@ class InvoicesList:
         agreement_has_card = from_bool(obj.get("AgreementHasCard"))
         is_insurance_policy = from_bool(obj.get("IsInsurancePolicy"))
         is_lawyer_agreement = from_bool(obj.get("IsLawyerAgreement"))
-        return InvoicesList(number, date, sell_date, gross_amount, gross_amount, wear, wear_kwh, paying_deadline_date,
+        return InvoicesList(number, date, sell_date, gross_amount, amount_to_pay, wear, wear_kwh, paying_deadline_date,
                             start_date, end_date, is_paid, id_pp, type, temp_type, days_remaining_to_deadline, has_iban,
                             status, pdf_exists, is_interest_note, color, agreement_name, agreement_number,
                             is_additional_agreement, agreement_end_date, agreement_expired, pdf_print_allowed,
@@ -118,7 +118,7 @@ class InvoicesList:
     def to_dict(self) -> dict:
         result: dict = {"Number": from_str(self.number), "Date": self.date.isoformat(),
                         "SellDate": self.sell_date.isoformat(), "GrossAmount": to_float(self.gross_amount),
-                        "GrossAmount": from_int(self.gross_amount), "Wear": from_int(self.wear),
+                        "AmountToPay": from_int(self.amount_to_pay), "Wear": from_int(self.wear),
                         "WearKWH": from_int(self.wear_kwh), "PayingDeadlineDate": self.paying_deadline_date.isoformat(),
                         "StartDate": self.start_date.isoformat(), "EndDate": self.end_date.isoformat(),
                         "IsPaid": from_bool(self.is_paid), "IdPP": from_str(str(self.id_pp)),
