@@ -1,8 +1,8 @@
 {
-  "domain": "pgnig_gas_sensor",
-  "name": "PGNIG gas Sensor",
-  "documentation": "https://github.com/pawelhulek/pgnig-sensor",
-  "issue_tracker": "https://github.com/pawelhulek/pgnig-sensor/issues",
+  "domain": "pgnig_ha_sensor",
+  "name": "PGNIG HA Sensor",
+  "documentation": "https://github.com/artblue1/PGNIG-HA",
+  "issue_tracker": "https://github.com/artblue1/PGNIG-HA/issues",
   "dependencies": [],
   "config_flow": true,
   "codeowners": [
@@ -10,5 +10,5 @@
   ],
   "requirements": [],
   "iot_class": "cloud_polling",
-  "version": "2.3.0"
+  "version": "1.0"
 }
