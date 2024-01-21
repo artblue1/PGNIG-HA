@@ -82,7 +82,7 @@ class InvoicesList:
         date = from_datetime(obj.get("Date"))
         sell_date = from_datetime(obj.get("SellDate"))
         gross_amount = from_float(obj.get("GrossAmount"))
-        gross_amount = from_int(obj.get("AmountToPay"))
+        gross_amount = from_int(obj.get("GrossAmount"))
         wear = from_int(obj.get("Wear"))
         wear_kwh = from_int(obj.get("WearKWH"))
         paying_deadline_date = from_datetime(obj.get("PayingDeadlineDate"))
@@ -118,7 +118,7 @@ class InvoicesList:
     def to_dict(self) -> dict:
         result: dict = {"Number": from_str(self.number), "Date": self.date.isoformat(),
                         "SellDate": self.sell_date.isoformat(), "GrossAmount": to_float(self.gross_amount),
-                        "AmountToPay": from_int(self.gross_amount), "Wear": from_int(self.wear),
+                        "GrossAmount": from_int(self.gross_amount), "Wear": from_int(self.wear),
                         "WearKWH": from_int(self.wear_kwh), "PayingDeadlineDate": self.paying_deadline_date.isoformat(),
                         "StartDate": self.start_date.isoformat(), "EndDate": self.end_date.isoformat(),
                         "IsPaid": from_bool(self.is_paid), "IdPP": from_str(str(self.id_pp)),
