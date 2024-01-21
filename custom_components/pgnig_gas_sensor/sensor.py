@@ -87,7 +87,7 @@ class PgnigSensor(SensorEntity):
     @property
     def device_info(self):
         return {
-            "identifiers": {("pgnig_gas_sensor", self.meter_id)},
+            "identifiers": {("pgnig_ha_sensor", self.meter_id)},
             "name": f"PGNIG GAS METER ID {self.meter_id}",
             "manufacturer": "PGNIG",
             "model": self.meter_id,
@@ -140,7 +140,7 @@ class PgnigInvoiceSensor(SensorEntity):
     @property
     def device_info(self):
         return {
-            "identifiers": {("pgnig_gas_sensor", self.meter_id)},
+            "identifiers": {("pgnig_ha_sensor", self.meter_id)},
             "name": f"PGNIG GAS METER ID {self.meter_id}",
             "manufacturer": "PGNIG",
             "model": self.meter_id,
